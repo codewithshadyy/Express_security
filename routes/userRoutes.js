@@ -4,6 +4,8 @@ const User = require("../models/User")
 const express = require("express")
 const router = express.Router()
 const generateToken = require("../controllers/authControllers")
+const loginLimitter = require("../middlewares/loginRateLimit")
+logginLimitter = require("../middlewares/loginRateLimit")
 
 
 // sign up user
@@ -65,7 +67,7 @@ router.post("/auth/register", async (req, res) => {
 
 
 
-router.post("/auth/login", async (req, res) => {
+router.post("/auth/login", loginLimitter, async (req, res) => {
 
     try {
         const {username, password} = req.body
