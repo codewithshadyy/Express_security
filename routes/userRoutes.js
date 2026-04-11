@@ -21,13 +21,15 @@ router.post("/auth/register", async (req, res) => {
         "message":"user exists"
 
         })
+    }
+    const hashedPassword = await bcrypt.hash(password, 10)
         
 
-    const user = await user.create({
+    const user = await User.create({
         name,
         email,
         username,
-        password,
+        password:hashedPassword,
         role
     })
       const token =generateToken(user)
@@ -37,7 +39,7 @@ router.post("/auth/register", async (req, res) => {
             user: {
                 id: user._id,
                 name: user.name,
-                username:user.usrename,
+                username:user.username,
                 email: user.email,
                 role: user.role
             }
@@ -52,7 +54,7 @@ router.post("/auth/register", async (req, res) => {
 
 
         
-    } catch (error) {
+     catch (error) {
 
         return res.status(500).json({message:error.message})
         
@@ -60,6 +62,50 @@ router.post("/auth/register", async (req, res) => {
     
     
 } )
+
+
+
+router.post("/auth/login", async (req, res) => {
+
+    try {
+        const {username, password} = req.body
+        const user = await User.findOne({username})
+        if(!user){
+            return res.status(400).json({
+                "message":"invalid credentials"
+            }
+            )
+        }
+
+        const isPasswordMatch = await bcrypt.compare(password, user.password)
+
+        if(!isPasswordMatch){
+           return  res.status(400).json({"message":"invalide login"})
+        }
+
+        const token = generateToken(user)
+
+        res.status(200).json({
+            message:"login succeesfull",
+            token,
+            user:{
+                id:user._id,
+                name:user.name,
+                username:user.username,
+                email:user.email,
+                pasword:user.password,
+                role:user.role
+                
+            }
+        })
+        
+    } catch (error) {
+        return res.status(500).json({message:error.message})
+        
+    }
+ 
+    
+})
 
 
 module.exports =router
