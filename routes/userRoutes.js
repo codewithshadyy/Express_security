@@ -21,6 +21,7 @@ router.post("/auth/register", async (req, res) => {
         "message":"user exists"
 
         })
+        
 
     const user = await user.create({
         name,
@@ -29,19 +30,23 @@ router.post("/auth/register", async (req, res) => {
         password,
         role
     })
-    }
-
-    const token =generateToken(user)
+      const token =generateToken(user)
     return res.status(201).json({
            message: "User registered successfully",
             token,
             user: {
                 id: user._id,
                 name: user.name,
+                username:user.usrename,
                 email: user.email,
                 role: user.role
             }
     })
+
+
+    }
+
+   
 
 
 
