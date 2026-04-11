@@ -1,8 +1,10 @@
 const user = require("../models/User")
-const bcrypt = reuqire("bcrpt")
+const bcrypt = require("bcrypt")
 const express  = require("express")
 const jwt = require("jsonwebtoken")
 
 const generateToken = (user)=>{
     return jwt.sign({id:user._id,role:user.role }, process.env.SECRET_KEY, {expiresIn:"7d"})
 }
+
+module.exports = generateToken
