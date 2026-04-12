@@ -109,9 +109,9 @@ router.post("/auth/login", loginLimitter, async (req, res) => {
     
 })
 
-router.get("/users/all", async (req, res) => {
+router.get("/all", async (req, res) => {
    try {
-     const users = await User.find()
+     const users = await User.find().select("-password")
     return res.status(200).json(users)
     
    } catch (error) {
