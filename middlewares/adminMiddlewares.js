@@ -1,4 +1,4 @@
-exports.adminOnly = async (req,res) => {
+const adminOnly = async (req,res) => {
 
     if(req.user && req.user.role === "Admin"){
         next()
@@ -7,3 +7,5 @@ exports.adminOnly = async (req,res) => {
     }
     
 }
+
+module.exports = adminOnly
