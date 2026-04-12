@@ -4,6 +4,7 @@ const app = express()
 const dotenv = require("dotenv")
 const { error } = require("winston")
 const userRoutes = require("./routes/userRoutes")
+const bookRoutes = require("./routes/bookRoutes")
 dotenv.config()
 
 
@@ -14,6 +15,7 @@ mongoose.connect(   process.env.MONGODB_URI)
 .catch(error => console.log(error.message))
 
 app.use("/api/users", userRoutes)
+app.use("/api/books", bookRoutes)
 
 
 
