@@ -22,7 +22,9 @@ mongoose.connect(   process.env.MONGODB_URI)
 .catch(error => console.log(error.message))
 
 // security settings
-app.use(helmet())
+app.use(helmet({
+    contentSecurityPolicy:false
+}))
 app.use(morgan("combined", {stream:accessLogStream}))
 
 //  app routes handling
