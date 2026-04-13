@@ -31,3 +31,40 @@ exports.getBooks = async (req, res) => {
         res.status(500).json({ message: error.message })
     }
 }
+
+exports.updateBook = async (req, res) => {
+    try {
+        const { id } = req.params
+
+        const book = await Book.findByIdAndUpdate(
+            id,
+            req.body,
+            { new: true, runValidators: true }
+        )
+
+        if (!book) {
+            return res.status(404).json({ message: "Book not found" })
+        }
+
+        res.status(200).json(book)
+
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+}
+
+
+exports.deleteBook = async (req,res) => {
+   try {
+    const id = req.params
+    const book = await Book.findByIdAndDelete(id)
+    if(!book){
+        return res.status(404).json({"message":"Book not found"})
+    }
+    res.status(200).json({"message":"book deleted succesfully"})
+    
+   } catch (error) {
+    return res.status(500).json({message:error.message})
+    
+   }    
+}
