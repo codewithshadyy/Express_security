@@ -8,8 +8,10 @@ const bookRoutes = require("./routes/bookRoutes")
 const helmet = require("helmet")
 const morgan = require("morgan")
 const winston  = require("winston")
+const accessLogStream =require("./securityInfo/appLogs")
 const rateLimiter = require("express-rate-limit")
 dotenv.config()
+
 
 
 app.use(express.json())
@@ -19,13 +21,15 @@ mongoose.connect(   process.env.MONGODB_URI)
 .then(() => console.log("Database connected successfully"))
 .catch(error => console.log(error.message))
 
+// security settings
+app.use(helmet())
+app.use(morgan("combined", {stream:accessLogStream}))
+
 //  app routes handling
 app.use("/api/users", userRoutes)
 app.use("/api/books", bookRoutes)
 
-// security settings
-app.use(helmet())
-app.use(morgan("dev"))
+
 
 const limiter = rateLimiter({
     windowMs:15 * 60 * 100,
