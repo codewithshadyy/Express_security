@@ -11,7 +11,8 @@ exports.createBook = async (req, res) => {
          author, 
          year,
           genre,
-           sourceUrl
+           sourceUrl,
+           uploadedBy:req.user._id
 
       })
       return res.json(201).json({"message":"book created succesfully"})
