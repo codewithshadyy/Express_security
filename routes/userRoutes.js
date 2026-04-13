@@ -95,7 +95,6 @@ router.post("/auth/login", loginLimitter, async (req, res) => {
                 name:user.name,
                 username:user.username,
                 email:user.email,
-                pasword:user.password,
                 role:user.role
                 
             }

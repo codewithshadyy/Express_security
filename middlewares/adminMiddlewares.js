@@ -1,4 +1,4 @@
-const adminOnly = async (req,res) => {
+const adminOnly = async (req,res, next) => {
 
     if(req.user && req.user.role === "Admin"){
         next()
