@@ -5,6 +5,8 @@ const dotenv = require("dotenv")
 const { error } = require("winston")
 const userRoutes = require("./routes/userRoutes")
 const bookRoutes = require("./routes/bookRoutes")
+const morgan = require("morgan")
+const winston  = require("winston")
 dotenv.config()
 
 
@@ -16,6 +18,7 @@ mongoose.connect(   process.env.MONGODB_URI)
 
 app.use("/api/users", userRoutes)
 app.use("/api/books", bookRoutes)
+app.use(morgan("dev"))
 
 
 
