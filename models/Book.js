@@ -18,7 +18,7 @@ const bookSchema = new mongoose.Schema({
         
     },
     genre:{
-         type:String,
+        type:String,
         required:true,
         
 
@@ -30,14 +30,14 @@ const bookSchema = new mongoose.Schema({
     },
     sourceUrl:{
           type:String,
-        required:true,
+        required:true
 
     },
     uploadedBy:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"User"
 
-    }
+    },
 
 }, {timestamps:true})
 

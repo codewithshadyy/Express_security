@@ -27,9 +27,29 @@ exports.createBook = async (req, res) => {
 // getting all the boks:authenticated users only
 exports.getBooks = async (req, res) => {
     try {
-        const books = await Book.find()
 
+        const {page = 1, limit = 10, genre, q} = req.query
+        let query = {}
+
+        //  filtering by genre
+        if(genre){
+            query.genre = genre
+        }
+
+        // searching by author or title
+        if(q){
+            query.$or = [
+                {title:{$regex:q, $options:"i"}},
+                {author:{$regex:q, $options:"i"}}
+            ]
+        }
+
+        const books = await Book.find(query)
+        .limit(parseInt(limit))
+        .skip((page-1)*limit)
+        .sort({createdAt:-1})
         res.status(200).json(books)
+        
     } catch (error) {
         res.status(500).json({ message: error.message })
     }
