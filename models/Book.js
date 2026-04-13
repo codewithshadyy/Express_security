@@ -23,9 +23,19 @@ const bookSchema = new mongoose.Schema({
         
 
     },
+    description:{
+        type:String,
+        default:""
+
+    },
     sourceUrl:{
           type:String,
         required:true,
+
+    },
+    uploadedBy:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"User"
 
     }
 

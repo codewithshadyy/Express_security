@@ -1,6 +1,8 @@
 const Book = require("../models/Book")
 const mongoose = require("mongoose")
 
+
+// creating a book:admin only
 exports.createBook = async (req, res) => {
   try {
       const {title, author, year, genre, sourceUrl} = req.body
@@ -22,7 +24,7 @@ exports.createBook = async (req, res) => {
     
 }
 
-
+// getting all the boks:authenticated users only
 exports.getBooks = async (req, res) => {
     try {
         const books = await Book.find()
@@ -33,6 +35,27 @@ exports.getBooks = async (req, res) => {
     }
 }
 
+// getting single book
+exports.getBook = async (req,res) => {
+    try {
+        const book = await Book.findById(req.params.id)
+        if(!book){
+           return  res.status(404).json({"message":"book not found"})
+        }
+
+        return res.status(200).json(book)
+
+        
+        
+    } catch (error) {
+
+        
+    }
+    
+}
+
+
+// updating books:admin only
 exports.updateBook = async (req, res) => {
     try {
         const { id } = req.params
@@ -54,7 +77,7 @@ exports.updateBook = async (req, res) => {
     }
 }
 
-
+// /deleting book:admin only
 exports.deleteBook = async (req,res) => {
    try {
     const {id} = req.params
