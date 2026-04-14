@@ -14,7 +14,7 @@ router.post("/auth/register", async (req, res) => {
 
      const {name, username, email, password, role } = req.body
 
-    userExists = await User.findOne({
+    const userExists = await User.findOne({
         $or:[{email}, {username}]
     })
 
