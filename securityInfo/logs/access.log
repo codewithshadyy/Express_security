@@ -9,3 +9,6 @@
 ::1 - - [13/Apr/2026:10:42:56 +0000] "POST /api/users/auth/register HTTP/1.1" 201 363 "-" "PostmanRuntime/7.53.0"
 ::1 - - [13/Apr/2026:10:43:19 +0000] "POST /api/users/auth/login HTTP/1.1" 200 352 "-" "PostmanRuntime/7.53.0"
 ::1 - - [13/Apr/2026:10:44:00 +0000] "GET /api/users/all HTTP/1.1" 200 1031 "-" "PostmanRuntime/7.53.0"
+::1 - - [14/Apr/2026:09:39:39 +0000] "GET /api/users/all HTTP/1.1" 200 1031 "-" "PostmanRuntime/7.53.0"
+::1 - - [14/Apr/2026:09:40:17 +0000] "GET /api/books/getBooks/?search=david HTTP/1.1" 200 2710 "-" "PostmanRuntime/7.53.0"
+::1 - - [14/Apr/2026:09:40:49 +0000] "GET /api/books/getBooks/?genre=Programming HTTP/1.1" 200 1654 "-" "PostmanRuntime/7.53.0"
