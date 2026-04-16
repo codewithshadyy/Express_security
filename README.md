@@ -1,4 +1,4 @@
-# 📚 Digital Library System API
+# 📚 Digital Library System API and advanced API Security 
 
 A secure and scalable RESTful API for managing a digital library system. This project demonstrates authentication, role-based access control,application advanced security, and full CRUD operations using Node.js, Express, and MongoDB.
 
