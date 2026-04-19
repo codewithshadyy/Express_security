@@ -1,0 +1,26 @@
+
+const mongoose = require("mongoose")
+
+const noteSchema = new mongoose({
+    title:{
+        type:String,
+        required:true,
+        trim:true
+    },
+    content:{
+        type:String,
+        required:true,
+        trim:true
+    },
+    createdBy:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"User"
+
+    },
+    
+
+}, {timestamps:true})
+
+const note = mongoose.model("Action", noteSchema)
+
+module.exports = note
