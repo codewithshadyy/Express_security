@@ -12,6 +12,12 @@ const noteSchema = new mongoose.Schema({
         required:true,
         trim:true
     },
+    status:{
+        type:String,
+        enum:["pending","in-progress","done", "cancelled"],
+        default:"pending"
+
+    },
     createdBy:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"User"
