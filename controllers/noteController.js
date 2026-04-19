@@ -16,3 +16,16 @@ exports.createNote  = async (req,res) => {
     }
     
 }
+
+exports.getNotes = async (req, res) => {
+    try {
+        const notes = await Note.find()
+        res.status(200).json(books)
+
+        
+    } catch (error) {
+        return res.status(500).json({message:error.message})
+        
+    }
+    
+}
