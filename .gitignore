@@ -1,2 +1,5 @@
 .env
 node_modules
+../access/log
+.../access.log
+securityInfo/logs/access.log
