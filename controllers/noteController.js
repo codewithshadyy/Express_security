@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 const Note = require("../models/Note")
+const user = require("../models/User")
 
 
 exports.createNote  = async (req,res) => {
