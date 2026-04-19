@@ -20,7 +20,7 @@ exports.createNote  = async (req,res) => {
 exports.getNotes = async (req, res) => {
     try {
         const notes = await Note.find()
-        res.status(200).json(books)
+        res.status(200).json(notes)
 
         
     } catch (error) {

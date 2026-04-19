@@ -6,7 +6,7 @@ const protect = require("../middlewares/authMiddlewares")
 const adminOnly = require("../middlewares/adminMiddlewares")
 
 router.post("/take-note", createNote)
-router.post("/get-notes", getNotes)
+router.get("/get-notes", getNotes)
 
 
 

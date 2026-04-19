@@ -29,3 +29,5 @@
 ::1 - - [19/Apr/2026:18:53:16 +0000] "POST /api/diary/take-note HTTP/1.1" 500 379 "-" "PostmanRuntime/7.53.0"
 ::1 - - [19/Apr/2026:18:55:01 +0000] "POST /api/diary/take-note HTTP/1.1" 500 110 "-" "PostmanRuntime/7.53.0"
 ::1 - - [19/Apr/2026:18:57:53 +0000] "POST /api/diary/take-note HTTP/1.1" 201 58 "-" "PostmanRuntime/7.53.0"
+::1 - - [19/Apr/2026:19:06:46 +0000] "GET /api/diary/get-notes HTTP/1.1" 404 158 "-" "PostmanRuntime/7.53.0"
+::1 - - [19/Apr/2026:19:08:26 +0000] "GET /api/diary/get-notes HTTP/1.1" 500 34 "-" "PostmanRuntime/7.53.0"
