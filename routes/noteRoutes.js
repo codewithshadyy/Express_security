@@ -5,7 +5,7 @@ const createNote = require("../controllers/noteController")
 const protect = require("../middlewares/authMiddlewares")
 const adminOnly = require("../middlewares/adminMiddlewares")
 
-router.post("take-note", createNote)
+router.post("/take-note", createNote)
 
 
 

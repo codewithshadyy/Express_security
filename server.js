@@ -7,6 +7,7 @@ const dotenv = require("dotenv")
 // app routes
 const userRoutes = require("./routes/userRoutes")
 const bookRoutes = require("./routes/bookRoutes")
+const noteRoutes = require("./routes/noteRoutes")
 
 // app security packages and modules
 const helmet = require("helmet")
