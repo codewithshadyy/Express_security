@@ -64,7 +64,7 @@ app.use(limiter)
 //  app routes handling
 app.use("/api/users", userRoutes)
 app.use("/api/books", bookRoutes)
-app.use("/api/diary")
+app.use("/api/diary", noteRoutes)
 
 
 
