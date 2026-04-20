@@ -68,3 +68,29 @@ exports.updateNote = async (req,res) => {
     }
     
 }
+
+exports.deleteNote = async (req,res) => {
+    try {
+        const note = await Note.findByIdAndDelete(req.params.id)
+        return res.status(200).json({"message":"deleted"})
+        
+    } catch (error) {
+         return res.status(500).json({message:error.message})
+        
+        
+    }
+    
+}
+exports.deleteAll = async (req,res) => {
+    try {
+        const notes = await Note.deleteMany({status:"pending"})
+        return res.status(200).json({"message":"deleted all with status pending", deletedCount:notes.deletedCount})
+        
+    } catch (error) {
+
+         return res.status(500).json({message:error.message})
+
+        
+    }
+    
+}
