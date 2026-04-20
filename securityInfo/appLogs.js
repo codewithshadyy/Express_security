@@ -5,9 +5,13 @@ const path = require("path")
 
 const accessLogStream = fs.createWriteStream(
     path.join(__dirname, "logs/access.log"),
-    {flags:"a"}
+    {flags:"a"},
+    
+    
 
 )
+
+
 
 
 module.exports =accessLogStream

@@ -18,6 +18,12 @@ const noteSchema = new mongoose.Schema({
         default:"pending"
 
     },
+    creator:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"User",
+        trim:true
+
+    },
     createdBy:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"User"
