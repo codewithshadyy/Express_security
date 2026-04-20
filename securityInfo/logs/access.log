@@ -64,3 +64,4 @@
 ::1 - - [20/Apr/2026:06:42:44 +0000] "GET /api/diary/get-notes HTTP/1.1" 200 2529 "-" "PostmanRuntime/7.53.0"
 ::1 - - [20/Apr/2026:06:43:10 +0000] "DELETE /api/diary/delete/69e525b142042990e0acf0fd HTTP/1.1" 200 21 "-" "PostmanRuntime/7.53.0"
 ::1 - - [20/Apr/2026:06:48:23 +0000] "DELETE /api/diary/delete/pending HTTP/1.1" 500 110 "-" "PostmanRuntime/7.53.0"
+::1 - - [20/Apr/2026:06:54:16 +0000] "DELETE /api/diary/erase/pending HTTP/1.1" 200 62 "-" "PostmanRuntime/7.53.0"
