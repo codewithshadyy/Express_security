@@ -46,3 +46,25 @@ exports.getNote = async (req,res) => {
   }
     
 }
+
+exports.updateNote = async (req,res) => {
+    try {
+        
+       
+        const note = await Note.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            {new:true, runValidators:true}
+
+        )
+        if(!note){
+            return res.status(404).json({"message":"note not found"})
+        }
+        return res.status(200).json(note)
+        
+    } catch (error) {
+        return res.status(500).json({message:error.message})
+        
+    }
+    
+}

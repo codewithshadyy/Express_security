@@ -54,3 +54,6 @@
 ::1 - - [20/Apr/2026:06:16:21 +0000] "GET /api/diary/get-notes HTTP/1.1" 200 2845 "-" "PostmanRuntime/7.53.0"
 ::1 - - [20/Apr/2026:06:17:01 +0000] "GET /api/diary/get-notes/69e5c1b92a704c9ecd8f8091 HTTP/1.1" 500 137 "-" "PostmanRuntime/7.53.0"
 ::1 - - [20/Apr/2026:06:20:07 +0000] "GET /api/diary/get-notes/69e5c1b92a704c9ecd8f8091 HTTP/1.1" 200 315 "-" "PostmanRuntime/7.53.0"
+::1 - - [20/Apr/2026:06:29:43 +0000] "PUT /api/diary/update-note/69e5c1b92a704c9ecd8f8091 HTTP/1.1" 200 315 "-" "PostmanRuntime/7.53.0"
+::1 - - [20/Apr/2026:06:31:19 +0000] "PUT /api/diary/update-note/69e5c1b92a704c9ecd8f8091 HTTP/1.1" 500 137 "-" "PostmanRuntime/7.53.0"
+::1 - - [20/Apr/2026:06:33:30 +0000] "PUT /api/diary/update-note/69e5c1b92a704c9ecd8f8091 HTTP/1.1" 500 137 "-" "PostmanRuntime/7.53.0"
