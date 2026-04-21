@@ -11,8 +11,10 @@ router.get("/get-notes", protect, getNotes)
 router.get("/get-notes/:id",protect, getNote)
 router.put("/update-note/:id", protect, updateNote)
 router.delete("/delete/:id", protect, deleteNote)
-router.delete("/erase/pending", protect, deleteAll)
+router.delete("/erase/pending", protect,adminOnly, deleteAll)
 
 
 
 module.exports = router
+
+
