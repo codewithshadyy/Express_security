@@ -3,9 +3,9 @@ const bcrypt = require("bcrypt")
 const User = require("../models/User")
 const express = require("express")
 const router = express.Router()
-const generateToken = require("../middlewares/tokenGenerator")
-const loginLimitter = require("../middlewares/loginRateLimit")
-logginLimitter = require("../middlewares/loginRateLimit")
+
+
+
 
 
 // sign up user
