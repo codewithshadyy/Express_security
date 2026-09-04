@@ -25,7 +25,7 @@ dotenv.config()
 app.use(express.json())
 
 // database connection
-mongoose.connect(   process.env.MONGODB_URI)
+mongoose.connect(   process.env.MONGODB_URL)
 .then(() => console.log("Database connected successfully"))
 .catch(error => console.log(error.message))
 
@@ -73,5 +73,5 @@ app.use("/api/diary", noteRoutes)
 
 
 app.listen(process.env.PORT, ()=>{
-    console.log(`http://localhost:${process.env.port}`)
+    console.log(`http://localhost:${process.env.PORT}`)
 })
