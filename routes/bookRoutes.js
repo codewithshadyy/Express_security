@@ -2,7 +2,7 @@ const express = require("express")
 const router = express.Router()
 
 const {createBook, getBooks, updateBook, deleteBook, getBook} = require("../controllers/bookControllers")
-const protect = require("../middlewares/authMiddlewares")
+const protect = require("../middlewares/protect")
 const adminOnly = require("../middlewares/adminMiddlewares")
 
 router.post("/postBook", protect, adminOnly, createBook)

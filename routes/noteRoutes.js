@@ -2,7 +2,7 @@
 const express = require("express")
 const router = express()
 const {createNote, getNotes, getNote, updateNote, deleteNote, deleteAll} = require("../controllers/noteController")
-const protect = require("../middlewares/authMiddlewares")
+const protect = require("../middlewares/protect")
 const adminOnly = require("../middlewares/adminMiddlewares")
 
 
