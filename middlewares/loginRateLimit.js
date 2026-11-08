@@ -1,7 +1,7 @@
 
 const expressRateLimit = require("express-rate-limit")
 
-const loginLimitter =expressRateLimit({
+exports.loginLimitter =expressRateLimit({
     windowMs:15 * 60 * 1000,
     max:5,
     message: {
@@ -12,4 +12,3 @@ const loginLimitter =expressRateLimit({
 
 })
 
-module.exports = loginLimitter
